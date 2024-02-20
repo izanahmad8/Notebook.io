@@ -7,7 +7,7 @@ export default function Signup(props) {
     const [credential, setCredential] = useState({ name: "", email: "", password: "", cpassword: "" });
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await fetch(`http://localhost:5000/api/auth/signup`, {
+        const response = await fetch(`https://notebook-io.onrender.com/api/auth/signup`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

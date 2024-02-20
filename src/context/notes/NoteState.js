@@ -1,7 +1,7 @@
 import { useState } from "react";
 import NoteContext from "./noteContext";
 export default function NoteState(props) {
-    const host = "http://localhost:5000/api";
+    const host = "https://notebook-io.onrender.com/api";
     const notesItem = []
     const [notes, setNotes] = useState(notesItem);
     //fetch Notes
