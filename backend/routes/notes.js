@@ -7,7 +7,7 @@ const router = express.Router();
 router.get('/fetchnotes', fetchuser, async (req, res) => {
     try {
         const notes = await Note.find({ user: req.user.id })
-        res.json(notes);
+        //res.json(notes);
     }
     catch (error) {
         console.error(error.message);
@@ -29,7 +29,7 @@ router.post('/addnotes', fetchuser, [
             title, description, tag, user: req.user.id
         });
         const savedNote = await note.save();
-        res.json(savedNote);
+        //res.json(savedNote);
     }
     catch (error) {
         console.error(error.message);
@@ -66,7 +66,7 @@ router.put('/updatenotes/:id', fetchuser, [
             return res.status(401).send("Not allowed");
         }
         note = await Note.findByIdAndUpdate(req.params.id, { $set: newNote }, { new: true });
-        res.json(note);
+        //res.json(note);
     }
     catch (error) {
         console.error(error.message);
@@ -85,7 +85,7 @@ router.delete('/deletenotes/:id', fetchuser, async (req, res) => {
             return res.status(401).send("Not allowed");
         }
         note = await Note.findByIdAndDelete(req.params.id);
-        res.json({ "success": "Notes has been deleted", note: note });
+        //res.json({ "success": "Notes has been deleted", note: note });
     }
     catch (error) {
         console.error(error.message);
