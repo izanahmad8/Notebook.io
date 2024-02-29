@@ -5,7 +5,7 @@ const router = express.Router();
 import { body, validationResult } from 'express-validator';
 import User from '../models/User.js';
 import fetchuser from '../middleware/fetchuser.js';
-const JWT_SECRET = JWT_SECRET;
+const JWT_SECRET = process.env.JWT_SECRET;
 
 //signup
 router.post('/signup', [
